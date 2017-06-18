@@ -10,6 +10,7 @@ add_executable(codeforces main.cpp)
 
 # round 416
 add_executable(round416_a round416/a.cpp)
+add_executable(round416_b round416/b.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
