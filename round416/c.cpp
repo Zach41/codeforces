@@ -39,12 +39,12 @@ int main(void)
     for (auto i = 1; i < codes.size(); i++) {
         auto lmin = border_map[codes[i]].first, rmax = border_map[codes[i]].second;
         auto cur = 0;
-        map<int, bool> visited;
+        vector<bool> visited(5010, false);
         dp[i] = dp[i-1];
         for (auto j = i; j; j--) {
             lmin = min(border_map[codes[j]].first, lmin);
             rmax = max(border_map[codes[j]].second, rmax);
-            if (visited.find(codes[j]) == visited.end()) {
+            if (!visited[codes[j]]) {
                 cur ^= codes[j];
                 visited[codes[j]] = true;
             }
